@@ -8,8 +8,8 @@ typedef struct{
     int n_hackers;   // number of hackers at the boat
     int n_serfs;     // number of serfs at the boat
     int cap;         // person's cap
-    sem_t hackers_queue;    // not used, why?
-    sem_t serfs_queue;      // not used, why?
+    sem_t hackers_queue;
+    sem_t serfs_queue;     
 } Boat;
 
 
