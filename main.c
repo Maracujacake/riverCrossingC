@@ -13,68 +13,17 @@ struct pthread_board{
 // apresentação do programa para o usuário
 void apresentacaoInicial(){
     printf("Olá, esse projeto baseia-se no problema de River crossing (pg. 160)\n");
-    printf("Existem varias pessoas de um lado do rio, dentre elas hackers e funcionarios da Microsoft, \nque precisam atravessar para o outro lado e existe apenas um barco. O barco so se movimenta se \nquatro pessoas estiverem nele. Entretanto, nao eh permitido que uma viagem seja feita se no barco \nestiverem presentes 3 hackers e 1 funcionario ou 3 funcionarios e 1 hacker. Qualquer outra combinacao eh permitida.\n\n");
+    printf("Existem varias pessoas de um lado do rio, dentre elas hackers e serfs (funcionarios da Microsoft?), \nque precisam atravessar para o outro lado e existe apenas um barco. O barco so se movimenta se \nquatro pessoas estiverem nele. Entretanto, nao eh permitido que uma viagem seja feita se no barco \nestiverem presentes 3 hackers e 1 funcionario ou 3 funcionarios e 1 hacker. Qualquer outra combinacao eh permitida.\n\n");
     printf("Você pode terminar a execução do programa a qualquer momento pressionando as teclas Ctrl+C do teclado\n\n");
-    printf("Dado a largada, apenas sera apresentado permutacoes que respeite as regras impostas! \n");
+    printf("Dada a largada, apenas seram apresentadas permutacoes que respeitem as regras impostas! \n");
     sleep(15);
     system("clear");
 }
 
-
-// ''animação'' do barco no console
-void apresentacao(){
-    printf(" Vamos la                                                                    \n");
-    printf(" _ _ _                                                                       \n");
-    printf(" _|   |                                                                      \n");
-    printf(" _|_ _|                                                                      \n");
-    printf("      |                                                                      \n");
-    printf("   _ _|_ _ _ _ _ _ __                                                        \n");
-    printf("  |_             _ __|                                                       \n");
-    printf("    |_ _ _ _ _ _|/                                                           \n");
-}
-
-void apresentacao1(){
-    printf(" Vamos la                                                                    \n");
-    printf("               _ _ _                                                         \n");
-    printf("               _|   |                                                        \n");
-    printf("               _|_ _|                                                        \n");
-    printf("                |                                                            \n");
-    printf("             _ _|_ _ _ _ _ _ __                                              \n");
-    printf("            |_             _ __|                                             \n");
-    printf("              |_ _ _ _ _ _|/                                                 \n");
-}  
-
-void apresentacao2(){
-    printf(" Vamos la                                                                    \n");
-    printf("                                  _ _ _                                     \n");
-    printf("                                  _|   |                                    \n");
-    printf("                                  _|_ _|                                    \n");
-    printf("                                   |                                        \n");
-    printf("                                _ _|_ _ _ _ _ _ __                          \n");
-    printf("                               |_             _ __|                         \n");
-    printf("                                |_ _ _ _ _ _|/                               \n");
-}
-
-void apresentacao3(){
-    printf(" Vamos la                                                                    \n");
-    printf("                                                     _ _ _                   \n");
-    printf("                                                     _|   |                  \n");
-    printf("                                                     _|_ _|                  \n");
-    printf("                                                      |                      \n");
-    printf("                                                   _ _|_ _ _ _ _ _ __        \n");
-    printf("                                                  |_             _ __|       \n");
-    printf("                                                    |_ _ _ _ _ _|/           \n");
-}
-
-void apresentacao4(){
-    //printf("Entao, eh dada a largada!!\n");
-    printf("Presentes no barco:\n\n");
-}
-
-
 int main(){
     system("clear"); // limpa tela do terminal
     apresentacaoInicial(); // exibe apresentação do programa
+
 
     // animação do barco conforme a viagem
     for (int p = 0; p < 2; p++)
@@ -129,4 +78,4 @@ int main(){
     pthread_join(person, NULL);
 
     return 0;
-} // endmain
+}

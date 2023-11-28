@@ -2,23 +2,86 @@
 #include "./main.h"
 
 
+
 struct pthread_board{
     Boat * boat; // barco
     int isCaptain; // indicador do capitão
     int type; // tipo de viajante
 };
 
-  void row_boat(pthread_mutex_t * mutex, int * is_captain, sem_t * queue, const int cap){
+// ''animação'' da travessia do barco
+void apresentacao(){
+    printf(" Vamos la                                                                    \n");
+    printf(" _ _ _                                                                       \n");
+    printf(" _|   |                                                                      \n");
+    printf(" _|_ _|                                                                      \n");
+    printf("      |                                                                      \n");
+    printf("   _ _|_ _ _ _ _ _ __                                                        \n");
+    printf("  |_             _ __|                                                       \n");
+    printf("    |_ _ _ _ _ _|/                                                           \n");
+}
+
+void apresentacao1(){
+    printf(" Vamos la                                                                    \n");
+    printf("               _ _ _                                                         \n");
+    printf("               _|   |                                                        \n");
+    printf("               _|_ _|                                                        \n");
+    printf("                |                                                            \n");
+    printf("             _ _|_ _ _ _ _ _ __                                              \n");
+    printf("            |_             _ __|                                             \n");
+    printf("              |_ _ _ _ _ _|/                                                 \n");
+}  
+
+void apresentacao2(){
+    printf(" Vamos la                                                                    \n");
+    printf("                                  _ _ _                                     \n");
+    printf("                                  _|   |                                    \n");
+    printf("                                  _|_ _|                                    \n");
+    printf("                                   |                                        \n");
+    printf("                                _ _|_ _ _ _ _ _ __                          \n");
+    printf("                               |_             _ __|                         \n");
+    printf("                                |_ _ _ _ _ _|/                               \n");
+}
+
+void apresentacao3(){
+    printf(" Vamos la                                                                    \n");
+    printf("                                                     _ _ _                   \n");
+    printf("                                                     _|   |                  \n");
+    printf("                                                     _|_ _|                  \n");
+    printf("                                                      |                      \n");
+    printf("                                                   _ _|_ _ _ _ _ _ __        \n");
+    printf("                                                  |_             _ __|       \n");
+    printf("                                                    |_ _ _ _ _ _|/           \n");
+}
+
+void apresentacao4(){
+    printf("Presentes no barco:\n\n");
+}
+
+// soltar o barco (com animação)
+void row_boat(pthread_mutex_t * mutex, int * is_captain, sem_t * queue, const int cap){
     int i;
     printf("Soltar o barco!!\n");
     sleep(5);
-
+    apresentacao();
+    sleep(1);
+    system("clear");
+    apresentacao1();
+    sleep(1);
+    system("clear");
+    apresentacao2();
+    sleep(1);
+    system("clear");
+    apresentacao3();
+    sleep(1);
+    system("clear");
     printf("Liberar espaços, saiam do barco seus nerds!!\n\n"); 
     sleep(5); 
     pthread_mutex_unlock(mutex);
     for(i=0;i<cap;i++) sem_post(queue);
                           
     *is_captain = 0;
+    printf("Encher o barco novamente!\n\n");
 };
 
 
