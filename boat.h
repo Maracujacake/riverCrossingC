@@ -12,7 +12,10 @@ typedef struct{
     sem_t serfs_queue;      // not used, why?
 } Boat;
 
+
 // prototypes
+void row_boat();
+void print_boat_fleet();
 void *board(void *a);
 void row_boat(pthread_mutex_t * mutex, int * is_captain, sem_t * queue, const int cap);
 void print_boat_fleet(const Boat boat);

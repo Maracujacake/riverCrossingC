@@ -1,12 +1,14 @@
 #include "./boat.h"
 #include "./main.h"
+#include "./boat.c"
 
+/*
 struct pthread_board{
     Boat * boat; // ''barco em que vão embarcar''
     int isCaptain; // indica quem é o capitão
     int type; // tipo de ''pessoa'' a embarcar
 };
-
+*/
 
 // apresentação do programa para o usuário
 void apresentacaoInicial(){

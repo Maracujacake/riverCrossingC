@@ -1,5 +1,6 @@
-#include "./boat.h";
+#include "./boat.h"
 #include "./main.h"
+
 
 struct pthread_board{
     Boat * boat; // barco
@@ -7,10 +8,29 @@ struct pthread_board{
     int type; // tipo de viajante
 };
 
+  void row_boat(pthread_mutex_t * mutex, int * is_captain, sem_t * queue, const int cap){
+    int i;
+    printf("Soltar o barco!!\n");
+    sleep(5);
+
+    printf("Liberar espaços, saiam do barco seus nerds!!\n\n"); 
+    sleep(5); 
+    pthread_mutex_unlock(mutex);
+    for(i=0;i<cap;i++) sem_post(queue);
+                          
+    *is_captain = 0;
+};
+
+
+// Print de quantas pessoas há no barco
+void print_boat_fleet(const Boat boat){
+    printf("h: %d, s: %d\n", boat.n_hackers, boat.n_serfs);
+}
 
 // função que deve ser chamada para garantir que nunca haverá:
 // 3 serfs e 1 hacker OU
 // 3 hackers e 1 serf
+
 void * board(void *a){
     struct pthread_board * args = (struct pthread_board *)a;
         
@@ -93,4 +113,5 @@ void * board(void *a){
         sem_wait(&args->boat->hackers_queue);             
         // }
     }
+
 }; 
