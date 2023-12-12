@@ -1,6 +1,14 @@
+/*
+Grupo D
+Anna Carolina Farias - 811448
+Christian Coronel da Silva Polli - 798083
+Jonas Gabriel S. C. Fagundes - 790901
+*/
+
 #include "./boat.h"
 #include "./main.h"
 #include "./boat.c"
+
 
 /*
 struct pthread_board{
